@@ -1,0 +1,6 @@
+name: BasedKitPVP
+version: '${version}'
+main: team.frosty.superpug.kitpvpbased.KitpvpBased
+api-version: 1.19
+authors: [ Frosty, Superpug ]
+description: Port of my kitpvp based stuff 
