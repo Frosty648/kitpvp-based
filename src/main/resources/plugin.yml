@@ -1,4 +1,4 @@
-name: BasedKitPVP
+name: KitPVP
 version: '${version}'
 main: team.frosty.superpug.kitpvpbased.KitpvpBased
 api-version: 1.19
