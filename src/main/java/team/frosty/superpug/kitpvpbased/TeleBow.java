@@ -1,7 +1,5 @@
 package team.frosty.superpug.kitpvpbased;
 import org.bukkit.Bukkit;
-import org.bukkit.entity.Entity;
-import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import java.util.HashMap;
@@ -11,17 +9,13 @@ import org.bukkit.event.entity.ProjectileHitEvent;
 
 
 public class TeleBow implements Listener {
-    HashMap<Integer,String> arrows = new HashMap<Integer,String>();
-    HashMap<String,Long> cooldown = new HashMap<String,Long>();
+    HashMap<Integer,String> arrows = new HashMap<>();
+    HashMap<String,Long> cooldown = new HashMap<>();
 
     @EventHandler
     public void onPlayerShoot(EntityShootBowEvent event){
         Bukkit.broadcastMessage("test");
-        if(event.getEntity() instanceof Player){
-            if(checkcooldown(((Player) event.getEntity()).getDisplayName()) != true){
-                event.setCancelled(true);
-                return;
-            }
+        if(event.getEntity() instanceof Player&& checkcooldown(((Player) event.getEntity()).getDisplayName())){
             arrows.put(event.getProjectile().getEntityId(),((Player) event.getEntity()).getDisplayName());
             Bukkit.broadcastMessage((((Player) event.getEntity()).getDisplayName()));
             cooldown.put(((Player) event.getEntity()).getDisplayName(),System.currentTimeMillis());

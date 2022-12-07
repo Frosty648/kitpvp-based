@@ -8,6 +8,7 @@ public final class KitpvpBased extends JavaPlugin {
     @Override
     public void onEnable() {
         getServer().getPluginManager().registerEvents(new Chat(), this);
+        getServer().getPluginManager().registerEvents(new TeleBow(), this);
     }
 
     @Override
