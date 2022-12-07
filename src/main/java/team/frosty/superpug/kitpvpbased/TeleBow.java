@@ -14,8 +14,8 @@ public class TeleBow implements Listener {
 
     @EventHandler
     public void onPlayerShoot(EntityShootBowEvent event){
-        Bukkit.broadcastMessage("test");
-        if(event.getEntity() instanceof Player&& checkcooldown(((Player) event.getEntity()).getDisplayName())){
+        if(event.getEntity() instanceof Player && checkcooldown(((Player) event.getEntity()).getDisplayName()) && ((Player)event.getEntity()).isSneaking()){
+            Bukkit.broadcastMessage("works");
             arrows.put(event.getProjectile().getEntityId(),((Player) event.getEntity()).getDisplayName());
             Bukkit.broadcastMessage((((Player) event.getEntity()).getDisplayName()));
             cooldown.put(((Player) event.getEntity()).getDisplayName(),System.currentTimeMillis());
