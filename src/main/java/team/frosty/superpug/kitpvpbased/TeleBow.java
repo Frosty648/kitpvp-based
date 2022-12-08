@@ -63,9 +63,9 @@ public class TeleBow implements Listener {
         if(System.currentTimeMillis() - cooldown.get(DisplayName)  >3000){
             Bukkit.broadcastMessage("cooldown expired");
             return true;
-        }else{
-            Bukkit.broadcastMessage("cooldown not expired");
-            return false;
         }
+        //returns false if cooldown if not expired
+        Bukkit.broadcastMessage("cooldown not expired");
+        return false;
     }
 }
