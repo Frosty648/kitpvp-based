@@ -9,3 +9,7 @@ commands:
   debug_add_pd:
     description: Adds Persistent Data to an item (for debugging).
     usage: /<command> <keyName> <dataType> <dataValue>
+
+  debug_get_player_pd:
+    description: Lists the persistent data on your character.
+    usage: /<command>

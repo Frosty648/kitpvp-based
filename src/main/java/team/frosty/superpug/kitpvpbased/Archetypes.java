@@ -8,6 +8,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
+import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
@@ -51,14 +52,38 @@ public class Archetypes implements Listener {
 
 
         if (data.has(armorer, PersistentDataType.INTEGER)) {
+            e.setCancelled(true);
             e.getPlayer().sendMessage(ChatColor.YELLOW + "[" + ChatColor.GREEN + "ARCHETYPES" + ChatColor.YELLOW + "] " + ChatColor.GREEN + "You have selected the Armorer Class!");
             e.getPlayer().getPersistentDataContainer().set(playerArmorer, PersistentDataType.INTEGER, 1);
+            e.getPlayer().getPersistentDataContainer().remove(playerTrickster);
+            e.getPlayer().getPersistentDataContainer().remove(playerWeaponsmith);
         } else if (data.has(trickster, PersistentDataType.INTEGER)) {
+            e.setCancelled(true);
             e.getPlayer().sendMessage(ChatColor.YELLOW + "[" + ChatColor.GREEN + "ARCHETYPES" + ChatColor.YELLOW + "] " + ChatColor.GREEN + "You have selected the Trickster Class!");
             e.getPlayer().getPersistentDataContainer().set(playerTrickster, PersistentDataType.INTEGER, 1);
+            e.getPlayer().getPersistentDataContainer().remove(playerArmorer);
+            e.getPlayer().getPersistentDataContainer().remove(playerWeaponsmith);
         } else if (data.has(weaponsmith, PersistentDataType.INTEGER)) {
+            e.setCancelled(true);
             e.getPlayer().sendMessage(ChatColor.YELLOW + "[" + ChatColor.GREEN + "ARCHETYPES" + ChatColor.YELLOW + "] " + ChatColor.GREEN + "You have selected the Weaponsmith Class!");
             e.getPlayer().getPersistentDataContainer().set(playerWeaponsmith, PersistentDataType.INTEGER, 1);
+            e.getPlayer().getPersistentDataContainer().remove(playerTrickster);
+            e.getPlayer().getPersistentDataContainer().remove(playerArmorer);
+        }
+    }
+
+    @EventHandler
+    public void onClickItem(InventoryClickEvent e) {
+        ItemStack is = e.getCurrentItem();
+        ItemMeta meta = is.getItemMeta();
+        PersistentDataContainer data = meta.getPersistentDataContainer();
+
+        NamespacedKey armorer = new NamespacedKey(KitpvpBased.getInstance(), "armorer");
+        NamespacedKey trickster = new NamespacedKey(KitpvpBased.getInstance(), "trickster");
+        NamespacedKey weaponsmith = new NamespacedKey(KitpvpBased.getInstance(), "weaponsmith");
+
+        if (data.has(armorer, PersistentDataType.INTEGER) || data.has(trickster, PersistentDataType.INTEGER) || data.has(weaponsmith, PersistentDataType.INTEGER)) {
+            e.setCancelled(true);
         }
     }
 }
