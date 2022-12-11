@@ -1,8 +1,6 @@
 package team.frosty.superpug.kitpvpbased;
 
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.NamespacedKey;
+import org.bukkit.*;
 import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -37,6 +35,8 @@ public class Archetypes implements Listener {
 
         if (e.getAction() != Action.RIGHT_CLICK_BLOCK && e.getAction() != Action.RIGHT_CLICK_AIR)
             return;
+
+        e.getPlayer().playNote(e.getPlayer().getLocation(), Instrument.BELL, Note.natural(1, Note.Tone.C));
 
         ItemStack item = e.getItem();
         ItemMeta im = item.getItemMeta();
