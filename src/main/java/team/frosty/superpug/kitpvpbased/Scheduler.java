@@ -30,11 +30,14 @@ public class Scheduler extends BukkitRunnable {
 
                 Collection<Player> players = (Collection<Player>) KitpvpBased.getInstance().getServer().getOnlinePlayers();
                 NamespacedKey inSpawn = new NamespacedKey(KitpvpBased.getInstance(), "inSpawn");
+                NamespacedKey kitLevel = new NamespacedKey(KitpvpBased.getInstance(), "kitLevel");
 
                 for (Player p : players) {
                     PersistentDataContainer data = p.getPersistentDataContainer();
 
                     if (p.getLocation().getY() > ceilingHeight) {
+                        data.set(kitLevel, PersistentDataType.INTEGER, 0);
+
                         data.set(inSpawn, PersistentDataType.INTEGER, 1);
                         PlayerInventory inv = p.getInventory();
 
@@ -62,6 +65,10 @@ public class Scheduler extends BukkitRunnable {
                         inv.setItem(5, weaponsmith);
                     } else {
                         data.set(inSpawn, PersistentDataType.INTEGER, 0);
+                    }
+
+                    if (p.getLocation().getY() == ceilingHeight) {
+                        data.set(kitLevel, PersistentDataType.INTEGER, 1);
                     }
                 }
             }

@@ -78,11 +78,9 @@ public class Archetypes implements Listener {
         ItemMeta meta = is.getItemMeta();
         PersistentDataContainer data = meta.getPersistentDataContainer();
 
-        NamespacedKey armorer = new NamespacedKey(KitpvpBased.getInstance(), "armorer");
-        NamespacedKey trickster = new NamespacedKey(KitpvpBased.getInstance(), "trickster");
-        NamespacedKey weaponsmith = new NamespacedKey(KitpvpBased.getInstance(), "weaponsmith");
+        NamespacedKey menuItem = new NamespacedKey(KitpvpBased.getInstance(), "menuItem");
 
-        if (data.has(armorer, PersistentDataType.INTEGER) || data.has(trickster, PersistentDataType.INTEGER) || data.has(weaponsmith, PersistentDataType.INTEGER)) {
+        if (data.has(menuItem, PersistentDataType.INTEGER)) {
             e.setCancelled(true);
         }
     }
