@@ -9,8 +9,6 @@ import team.frosty.superpug.kitpvpbased.Commands.DebugGetPlayerPD;
 public final class KitpvpBased extends JavaPlugin {
     private static KitpvpBased instance;
 
-    private static KitpvpBased instance;
-
     @Override
     public void onEnable() {
 
