@@ -7,6 +7,7 @@ import team.frosty.superpug.kitpvpbased.Commands.DebugGetPlayerPD;
 
 
 public final class KitpvpBased extends JavaPlugin {
+    private static KitpvpBased instance;
 
     private static KitpvpBased instance;
 
@@ -26,6 +27,7 @@ public final class KitpvpBased extends JavaPlugin {
 
         // Registering event modules
         getServer().getPluginManager().registerEvents(new Chat(), this);
+        getServer().getPluginManager().registerEvents(new TeleBow(), this);
         getServer().getPluginManager().registerEvents(new Archetypes(), this);
 
         // Adding in scheduler instances (SUBJECT TO CHANGE THIS IS NOT WELL DESIGNED AND IS NOT EXPANDABLE UPON)
@@ -39,6 +41,7 @@ public final class KitpvpBased extends JavaPlugin {
         this.getCommand("debug_add_pd").setExecutor(new DebugAddPD());
         this.getCommand("debug_get_player_pd").setExecutor(new DebugGetPlayerPD());
     }
+
 
     // Instance getter so we can use the plugin class methods in event classes.
     public static KitpvpBased getInstance() {
