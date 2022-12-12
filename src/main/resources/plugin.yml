@@ -4,3 +4,12 @@ main: team.frosty.superpug.kitpvpbased.KitpvpBased
 api-version: 1.19
 authors: [ Frosty, Superpug ]
 description: Port of my kitpvp based stuff 
+
+commands:
+  debug_add_pd:
+    description: Adds Persistent Data to an item (for debugging).
+    usage: /<command> <keyName> <dataType> <dataValue>
+
+  debug_get_player_pd:
+    description: Lists the persistent data on your character.
+    usage: /<command>
