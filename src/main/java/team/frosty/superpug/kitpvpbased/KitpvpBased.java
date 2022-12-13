@@ -3,8 +3,8 @@ package team.frosty.superpug.kitpvpbased;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.plugin.java.JavaPlugin;
-import team.frosty.superpug.kitpvpbased.Commands.DebugAddPD;
-import team.frosty.superpug.kitpvpbased.Commands.DebugGetPlayerPD;
+import team.frosty.superpug.kitpvpbased.commands.DebugAddPD;
+import team.frosty.superpug.kitpvpbased.commands.DebugGetPlayerPD;
 import team.frosty.superpug.kitpvpbased.zones.ZoneCheck;
 import team.frosty.superpug.kitpvpbased.zones.DrawZones;
 

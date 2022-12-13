@@ -1,4 +1,4 @@
-package team.frosty.superpug.kitpvpbased.Commands;
+package team.frosty.superpug.kitpvpbased.commands;
 
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
