@@ -1,8 +1,6 @@
 package team.frosty.superpug.kitpvpbased.archetypes;
 
 import org.bukkit.*;
-import org.bukkit.entity.Item;
-import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
@@ -15,7 +13,6 @@ import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 import team.frosty.superpug.kitpvpbased.KitpvpBased;
 
-import javax.naming.Name;
 
 public class Archetypes implements Listener {
 

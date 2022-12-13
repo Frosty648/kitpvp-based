@@ -3,8 +3,6 @@ import org.bukkit.Location;
 import org.bukkit.Particle;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import org.bukkit.Color;
-
 public class DrawZones extends BukkitRunnable{
         @Override
         public void run(){

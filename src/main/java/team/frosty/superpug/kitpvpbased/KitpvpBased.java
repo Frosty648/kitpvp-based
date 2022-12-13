@@ -39,11 +39,8 @@ public final class KitpvpBased extends JavaPlugin {
         //getServer().getPluginManager().registerEvents(new Levels(), this);
 
         // Adding in scheduler instances (SUBJECT TO CHANGE THIS IS NOT WELL DESIGNED AND IS NOT EXPANDABLE UPON)
-        CheckSpawn checkY = new CheckSpawn(CheckType.CHECK_Y_LEVEL);
+        CheckSpawn checkY = new CheckSpawn();
         checkY.runTaskTimer(this, 0, 1);
-
-        //  Scheduler checkArch = new Scheduler(CheckType.CHECK_ARCHETYPE);
-        //  checkArch.runTaskTimer(this, 0, 20);
 
         // Registering commands (all for debug)
         this.getCommand("debug_add_pd").setExecutor(new DebugAddPD());

@@ -10,7 +10,6 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.scheduler.BukkitRunnable;
-import team.frosty.superpug.kitpvpbased.CheckType;
 import team.frosty.superpug.kitpvpbased.KitpvpBased;
 
 import java.util.Collection;
