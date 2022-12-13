@@ -19,7 +19,7 @@ public class CheckSpawn extends BukkitRunnable {
 
     @Override
     public void run() {
-        
+
         int ceilingHeight = KitpvpBased.getInstance().getConfig().getInt("arena.ceiling");
 
         Collection<Player> players = (Collection<Player>) KitpvpBased.getInstance().getServer().getOnlinePlayers();
