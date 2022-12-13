@@ -12,13 +12,13 @@ import java.util.HashMap;
 
 public class ZoneCheck extends BukkitRunnable{
     public static HashMap<Location, Double> circleLocations = new HashMap<>();
-    public static int zonesize = 4;
+    public static int zoneSize = 4;
     @Override
     public void run() {
         ArrayList<Player> players = new ArrayList<>(Bukkit.getOnlinePlayers());
         for (Player p : players) {
             for (Location l : circleLocations.keySet())
-                if (p.getLocation().distanceSquared(l) < Math.pow(zonesize, 2)) {
+                if (p.getLocation().distanceSquared(l) < Math.pow(zoneSize, 2)) {
                     circleLocations.put(l, circleLocations.get(l) + 0.5d);
                     Bukkit.broadcastMessage("player in radius of" + " X: " + l.getX() + " Y:  " + l.getY() + " Z: " + l.getZ() + " with charge of " + circleLocations.get(l) + "%");
                 }
