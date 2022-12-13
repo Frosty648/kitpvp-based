@@ -33,7 +33,6 @@ public final class KitpvpBased extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new Chat(), this);
         getServer().getPluginManager().registerEvents(new TeleBow(), this);
         getServer().getPluginManager().registerEvents(new Archetypes(), this);
-        //getServer().getPluginManager().registerEvents(new Levels(), this);
 
         // Creating original zones
         int x1 = getConfig().getInt("arena.x1");
