@@ -1,7 +1,10 @@
 package team.frosty.superpug.kitpvpbased;
 
+import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.configuration.Configuration;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.scheduler.BukkitScheduler;
 import team.frosty.superpug.kitpvpbased.Commands.DebugAddPD;
 import team.frosty.superpug.kitpvpbased.Commands.DebugGetPlayerPD;
 
@@ -11,6 +14,10 @@ public final class KitpvpBased extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        ControlZones.circleLocations.add(new Location(Bukkit.getWorlds().get(0),71, 65, -9 ));
+
+        BukkitScheduler scheduler = getServer().getScheduler();
+        scheduler.scheduleSyncRepeatingTask(this,ControlZones.runnable, 0, 5L);
 
         instance = this;
 
@@ -27,6 +34,7 @@ public final class KitpvpBased extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new Chat(), this);
         getServer().getPluginManager().registerEvents(new TeleBow(), this);
         getServer().getPluginManager().registerEvents(new Archetypes(), this);
+        getServer().getPluginManager().registerEvents(new Levels(), this);
 
         // Adding in scheduler instances (SUBJECT TO CHANGE THIS IS NOT WELL DESIGNED AND IS NOT EXPANDABLE UPON)
         Scheduler checkY = new Scheduler(CheckType.CHECK_Y_LEVEL);
