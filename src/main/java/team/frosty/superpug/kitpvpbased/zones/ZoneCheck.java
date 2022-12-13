@@ -26,12 +26,13 @@ public class ZoneCheck extends BukkitRunnable{
                     circleLocations.put(l, circleLocations.get(l) + 5.0d);
                     Bukkit.broadcastMessage("player in radius of" + " X: " + l.getX() + " Y:  " + l.getY() + " Z: " + l.getZ() + " with charge of " + circleLocations.get(l) + "%");
                 }
-                if(circleLocations.get(l) >= 100){
+                if(circleLocations.get(l) == 100d){
                     for(Player p2 : players){
                         playerdistances.put(p.getLocation().distanceSquared(l), p2);
                         distances.add(p2.getLocation().distanceSquared(l));
                     }
                     Collections.sort(distances);
+                    Bukkit.broadcastMessage(String.valueOf(distances));
                     Bukkit.broadcastMessage(String.valueOf(playerdistances.get(distances.get(distances.size()-1))));
                 }
             }
