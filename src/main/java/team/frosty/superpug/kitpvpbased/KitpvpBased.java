@@ -2,11 +2,10 @@ package team.frosty.superpug.kitpvpbased;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
-import org.bukkit.configuration.Configuration;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.scheduler.BukkitScheduler;
 import team.frosty.superpug.kitpvpbased.Commands.DebugAddPD;
 import team.frosty.superpug.kitpvpbased.Commands.DebugGetPlayerPD;
+import team.frosty.superpug.kitpvpbased.zones.ZoneCheck;
 
 
 public final class KitpvpBased extends JavaPlugin {
@@ -14,10 +13,10 @@ public final class KitpvpBased extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        ControlZones.circleLocations.add(new Location(Bukkit.getWorlds().get(0),71, 65, -9 ));
-
-        BukkitScheduler scheduler = getServer().getScheduler();
-        scheduler.scheduleSyncRepeatingTask(this,ControlZones.runnable, 0, 5L);
+        ZoneCheck.circleLocations.put(new Location(Bukkit.getWorlds().get(0),71, 65, -9 ), 0d);
+        ZoneCheck.circleLocations.put(new Location(Bukkit.getWorlds().get(0),82, 65, -23 ),0d);
+        //new ControlZones().checkCircles.runTaskTimer(this,0,5);
+        //new ControlZones().drawZones.runTaskTimer(this,0,20);
 
         instance = this;
 

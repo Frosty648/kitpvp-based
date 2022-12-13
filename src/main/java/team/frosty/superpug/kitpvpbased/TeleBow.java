@@ -27,7 +27,7 @@ public class TeleBow implements Listener {
     @EventHandler
     public void onPlayerShoot(EntityShootBowEvent event){
         //logic to check that 1) a player is the one firing the arrow and 2) they are crouched when firing
-        if(!(event.getEntity() instanceof Player) || !((Player)event.getEntity()).isSneaking()){
+        if(!(event.getEntity() instanceof Player) || !((Player)event.getEntity()).isSneaking() || !event.getBow().getItemMeta().getPersistentDataContainer().getKeys().toString().contains("telebow")){
             return;
         }
 
