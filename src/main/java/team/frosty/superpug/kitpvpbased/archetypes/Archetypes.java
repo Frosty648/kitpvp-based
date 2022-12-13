@@ -1,4 +1,4 @@
-package team.frosty.superpug.kitpvpbased;
+package team.frosty.superpug.kitpvpbased.archetypes;
 
 import org.bukkit.*;
 import org.bukkit.entity.Item;
@@ -13,6 +13,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
+import team.frosty.superpug.kitpvpbased.KitpvpBased;
 
 import javax.naming.Name;
 

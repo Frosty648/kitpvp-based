@@ -3,6 +3,8 @@ package team.frosty.superpug.kitpvpbased;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.plugin.java.JavaPlugin;
+import team.frosty.superpug.kitpvpbased.archetypes.Archetypes;
+import team.frosty.superpug.kitpvpbased.archetypes.CheckSpawn;
 import team.frosty.superpug.kitpvpbased.commands.DebugAddPD;
 import team.frosty.superpug.kitpvpbased.commands.DebugGetPlayerPD;
 import team.frosty.superpug.kitpvpbased.zones.ZoneCheck;
@@ -37,7 +39,7 @@ public final class KitpvpBased extends JavaPlugin {
         //getServer().getPluginManager().registerEvents(new Levels(), this);
 
         // Adding in scheduler instances (SUBJECT TO CHANGE THIS IS NOT WELL DESIGNED AND IS NOT EXPANDABLE UPON)
-        Scheduler checkY = new Scheduler(CheckType.CHECK_Y_LEVEL);
+        CheckSpawn checkY = new CheckSpawn(CheckType.CHECK_Y_LEVEL);
         checkY.runTaskTimer(this, 0, 1);
 
         //  Scheduler checkArch = new Scheduler(CheckType.CHECK_ARCHETYPE);

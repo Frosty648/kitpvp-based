@@ -1,4 +1,4 @@
-package team.frosty.superpug.kitpvpbased;
+package team.frosty.superpug.kitpvpbased.archetypes;
 
 import org.bukkit.*;
 import org.bukkit.enchantments.Enchantment;
@@ -10,10 +10,12 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.scheduler.BukkitRunnable;
+import team.frosty.superpug.kitpvpbased.CheckType;
+import team.frosty.superpug.kitpvpbased.KitpvpBased;
 
 import java.util.Collection;
 
-public class Scheduler extends BukkitRunnable {
+public class CheckSpawn extends BukkitRunnable {
 
     /*
         DISCLAIMER: THIS IS NOT WELL DESIGNED CODE!
@@ -30,7 +32,7 @@ public class Scheduler extends BukkitRunnable {
 
     private CheckType type;
 
-    public Scheduler(CheckType type) {
+    public CheckSpawn(CheckType type) {
         this.type = type;
     }
 
