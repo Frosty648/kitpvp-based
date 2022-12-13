@@ -6,6 +6,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import team.frosty.superpug.kitpvpbased.Commands.DebugAddPD;
 import team.frosty.superpug.kitpvpbased.Commands.DebugGetPlayerPD;
 import team.frosty.superpug.kitpvpbased.zones.ZoneCheck;
+import team.frosty.superpug.kitpvpbased.zones.DrawZones;
 
 
 public final class KitpvpBased extends JavaPlugin {
@@ -15,8 +16,8 @@ public final class KitpvpBased extends JavaPlugin {
     public void onEnable() {
         ZoneCheck.circleLocations.put(new Location(Bukkit.getWorlds().get(0),71, 65, -9 ), 0d);
         ZoneCheck.circleLocations.put(new Location(Bukkit.getWorlds().get(0),82, 65, -23 ),0d);
-        //new ControlZones().checkCircles.runTaskTimer(this,0,5);
-        //new ControlZones().drawZones.runTaskTimer(this,0,20);
+        new ZoneCheck().runTaskTimer(this,0,5);
+        new DrawZones().runTaskTimer(this,0,20);
 
         instance = this;
 

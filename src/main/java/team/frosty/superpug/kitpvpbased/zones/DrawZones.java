@@ -6,9 +6,8 @@ import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.Color;
 
 public class DrawZones extends BukkitRunnable{
-
         @Override
-        public void run() {
+        public void run(){
             for(Location l: ZoneCheck.circleLocations.keySet()){
                 for (int d = 0; d <= 90; d += 1) {
                     Location particleLoc = new Location(l.getWorld(), l.getX(), l.getY(), l.getZ());
