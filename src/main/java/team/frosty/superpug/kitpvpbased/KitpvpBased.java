@@ -14,12 +14,12 @@ public final class KitpvpBased extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        instance = this;
+
         ZoneCheck.circleLocations.put(new Location(Bukkit.getWorlds().get(0),71, 65, -9 ), 0d);
         ZoneCheck.circleLocations.put(new Location(Bukkit.getWorlds().get(0),82, 65, -23 ),0d);
-        new ZoneCheck().runTaskTimer(this,0,5);
-        new DrawZones().runTaskTimer(this,0,20);
-
-        instance = this;
+        new ZoneCheck().runTaskTimer(this,0,5L);
+        new DrawZones().runTaskTimer(this,0,5L);
 
         // Config stuff so we can find spawn and add the charging circles later down the line.
         getConfig().addDefault("arena.x1", 200);
@@ -34,7 +34,7 @@ public final class KitpvpBased extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new Chat(), this);
         getServer().getPluginManager().registerEvents(new TeleBow(), this);
         getServer().getPluginManager().registerEvents(new Archetypes(), this);
-        getServer().getPluginManager().registerEvents(new Levels(), this);
+        //getServer().getPluginManager().registerEvents(new Levels(), this);
 
         // Adding in scheduler instances (SUBJECT TO CHANGE THIS IS NOT WELL DESIGNED AND IS NOT EXPANDABLE UPON)
         Scheduler checkY = new Scheduler(CheckType.CHECK_Y_LEVEL);
