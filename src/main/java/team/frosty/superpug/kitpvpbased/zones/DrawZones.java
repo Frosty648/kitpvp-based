@@ -13,7 +13,7 @@ public class DrawZones extends BukkitRunnable{
                     Location particleLoc = new Location(l.getWorld(), l.getX(), l.getY(), l.getZ());
                     particleLoc.setX(l.getX() + Math.cos(d) * ZoneCheck.zonesize);
                     particleLoc.setZ(l.getZ() + Math.sin(d) * ZoneCheck.zonesize);
-                    l.getWorld().spawnParticle(Particle.CRIT, particleLoc, 3);
+                    l.getWorld().spawnParticle(Particle.CRIT, particleLoc, 3, 0d, 0d, 0d, 0d);
                 }
             }
         }
