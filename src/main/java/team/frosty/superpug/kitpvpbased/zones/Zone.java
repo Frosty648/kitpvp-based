@@ -40,6 +40,7 @@ public class Zone extends BukkitRunnable{
 
         if(this.charge >= 100){
             this.cancel();
+            Bukkit.getPluginManager().callEvent(new ZoneCompleteEvent(this));
             Bukkit.broadcastMessage("zone finished");
         }
 

@@ -9,7 +9,7 @@ import team.frosty.superpug.kitpvpbased.commands.DebugAddPD;
 import team.frosty.superpug.kitpvpbased.commands.DebugGetPlayerPD;
 import team.frosty.superpug.kitpvpbased.utils.ZoneUtils;
 import team.frosty.superpug.kitpvpbased.zones.ZoneCheck;
-import team.frosty.superpug.kitpvpbased.zones.DrawZones;
+import  team.frosty.superpug.kitpvpbased.zones.Zone;
 
 
 public final class KitpvpBased extends JavaPlugin {
@@ -45,9 +45,9 @@ public final class KitpvpBased extends JavaPlugin {
 
         // Adding in scheduler instances
         new CheckSpawn().runTaskTimer(this, 0, 1);
-        new ZoneCheck().runTaskTimer(this,0,5L);
-        new DrawZones().runTaskTimer(this,0,5L);
-
+        //new ZoneCheck().runTaskTimer(this,0,5L);
+        //new DrawZones().runTaskTimer(this,0,5L);
+        new Zone(new Location(Bukkit.getWorlds().get(0),71,65,-9));
         // Registering commands (all for debug)
         this.getCommand("debug_add_pd").setExecutor(new DebugAddPD());
         this.getCommand("debug_get_player_pd").setExecutor(new DebugGetPlayerPD());
