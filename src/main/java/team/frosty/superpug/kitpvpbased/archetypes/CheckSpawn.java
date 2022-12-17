@@ -30,28 +30,28 @@ public class CheckSpawn extends BukkitRunnable {
         NamespacedKey tricksterKey = new NamespacedKey(KitpvpBased.getInstance(), "trickster");
         NamespacedKey weaponsmithKey = new NamespacedKey(KitpvpBased.getInstance(), "weaponsmith");
 
-        ItemStack armorer = new ItemStack(Material.NETHERITE_INGOT);
-        ItemMeta armorerItemMeta = armorer.getItemMeta();
-        armorerItemMeta.getPersistentDataContainer().set(armorerKey, PersistentDataType.INTEGER, 1);
-        armorerItemMeta.getPersistentDataContainer().set(menuItem, PersistentDataType.INTEGER, 1);
-        armorerItemMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
-        armorerItemMeta.setDisplayName(ChatColor.RESET + "" + ChatColor.YELLOW + "" + ChatColor.BOLD + "ARMORER");
-
-        ItemStack trickster = new ItemStack(Material.BOW);
-        ItemMeta tricksterItemMeta = trickster.getItemMeta();
-        tricksterItemMeta.getPersistentDataContainer().set(tricksterKey, PersistentDataType.INTEGER, 1);
-        tricksterItemMeta.getPersistentDataContainer().set(menuItem, PersistentDataType.INTEGER, 1);
-        tricksterItemMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
-        tricksterItemMeta.setDisplayName(ChatColor.RESET + "" + ChatColor.YELLOW + "" + ChatColor.BOLD + "TRICKSTER");
-
-        ItemStack weaponsmith = new ItemStack(Material.DIAMOND_SWORD);
-        ItemMeta weaponsmithItemMeta = weaponsmith.getItemMeta();
-        weaponsmithItemMeta.getPersistentDataContainer().set(weaponsmithKey, PersistentDataType.INTEGER, 1);
-        weaponsmithItemMeta.getPersistentDataContainer().set(menuItem, PersistentDataType.INTEGER, 1);
-        weaponsmithItemMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
-        weaponsmithItemMeta.setDisplayName(ChatColor.RESET + "" + ChatColor.YELLOW + "" + ChatColor.BOLD + "WEAPONSMITH");
-
         for (Player p : players) {
+            ItemStack armorer = new ItemStack(Material.NETHERITE_INGOT);
+            ItemMeta armorerItemMeta = armorer.getItemMeta();
+            armorerItemMeta.getPersistentDataContainer().set(armorerKey, PersistentDataType.INTEGER, 1);
+            armorerItemMeta.getPersistentDataContainer().set(menuItem, PersistentDataType.INTEGER, 1);
+            armorerItemMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+            armorerItemMeta.setDisplayName(ChatColor.RESET + "" + ChatColor.BLUE + "" + ChatColor.BOLD + "ARMORER");
+
+            ItemStack trickster = new ItemStack(Material.BOW);
+            ItemMeta tricksterItemMeta = trickster.getItemMeta();
+            tricksterItemMeta.getPersistentDataContainer().set(tricksterKey, PersistentDataType.INTEGER, 1);
+            tricksterItemMeta.getPersistentDataContainer().set(menuItem, PersistentDataType.INTEGER, 1);
+            tricksterItemMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+            tricksterItemMeta.setDisplayName(ChatColor.RESET + "" + ChatColor.BLUE + "" + ChatColor.BOLD + "TRICKSTER");
+
+            ItemStack weaponsmith = new ItemStack(Material.DIAMOND_SWORD);
+            ItemMeta weaponsmithItemMeta = weaponsmith.getItemMeta();
+            weaponsmithItemMeta.getPersistentDataContainer().set(weaponsmithKey, PersistentDataType.INTEGER, 1);
+            weaponsmithItemMeta.getPersistentDataContainer().set(menuItem, PersistentDataType.INTEGER, 1);
+            weaponsmithItemMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+            weaponsmithItemMeta.setDisplayName(ChatColor.RESET + "" + ChatColor.BLUE + "" + ChatColor.BOLD + "WEAPONSMITH");
+            
             PersistentDataContainer data = p.getPersistentDataContainer();
 
             int selected = getArchetype(p);
