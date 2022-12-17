@@ -15,11 +15,13 @@ import java.util.HashMap;
 public class Zone extends BukkitRunnable{
     private Location zoneLocation;
     private ArrayList<Double> Distances;
+    private int size;
     private int charge;
     private int chargeRate = 1;
 
-    public Zone(Location l){
+    public Zone(Location l,int s){
         this.zoneLocation = l;
+        this.size = s;
         this.runTaskTimer(KitpvpBased.getInstance(), 0,5);
     }
 
@@ -39,7 +41,6 @@ public class Zone extends BukkitRunnable{
         }
 
         if(this.charge >= 100){
-            this.cancel();
             Bukkit.getPluginManager().callEvent(new ZoneCompleteEvent(this));
             Bukkit.broadcastMessage("zone finished");
         }
@@ -52,8 +53,8 @@ public class Zone extends BukkitRunnable{
     public void drawZone(){
         for (int d = 0; d <= 90; d += 1) {
             Location particleLoc = new Location(zoneLocation.getWorld(), zoneLocation.getX(), zoneLocation.getY(), zoneLocation.getZ());
-            particleLoc.setX(zoneLocation.getX() + Math.cos(d) * ZoneCheck.zoneSize);
-            particleLoc.setZ(zoneLocation.getZ() + Math.sin(d) * ZoneCheck.zoneSize);
+            particleLoc.setX(zoneLocation.getX() + Math.cos(d) * size);
+            particleLoc.setZ(zoneLocation.getZ() + Math.sin(d) * size);
             zoneLocation.getWorld().spawnParticle(Particle.CRIT, particleLoc, 1, 0d, 0d, 0d, 0d);
         }
     }
@@ -73,6 +74,7 @@ public class Zone extends BukkitRunnable{
         }
         charge += amount;
     }
+
 
     public Location getZoneLocation(){
         return zoneLocation;

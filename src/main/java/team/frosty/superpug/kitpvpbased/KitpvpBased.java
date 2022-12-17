@@ -40,14 +40,14 @@ public final class KitpvpBased extends JavaPlugin {
         int z1 = getConfig().getInt("arena.z1");
         int z2 = getConfig().getInt("arena.z2");
         int floor = getConfig().getInt("arena.floor");
-        ZoneCheck.circleLocations.put(ZoneUtils.genRandomCircleLoc(x1, x2, z1, z1, floor), 0d);
-        ZoneCheck.circleLocations.put(ZoneUtils.genRandomCircleLoc(x1, x2, z1, z1, floor), 0d);
+        new Zone(ZoneUtils.genRandomCircleLoc(x1, x2, z1, z1, floor),7);
+        new Zone(ZoneUtils.genRandomCircleLoc(x1, x2, z1, z1, floor),7);
 
         // Adding in scheduler instances
         new CheckSpawn().runTaskTimer(this, 0, 1);
         //new ZoneCheck().runTaskTimer(this,0,5L);
         //new DrawZones().runTaskTimer(this,0,5L);
-        new Zone(new Location(Bukkit.getWorlds().get(0),71,65,-9));
+        new Zone(new Location(Bukkit.getWorlds().get(0),71,65,-9),7);
         // Registering commands (all for debug)
         this.getCommand("debug_add_pd").setExecutor(new DebugAddPD());
         this.getCommand("debug_get_player_pd").setExecutor(new DebugGetPlayerPD());

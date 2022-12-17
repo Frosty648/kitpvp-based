@@ -1,5 +1,6 @@
 package team.frosty.superpug.kitpvpbased.zones;
 
+import org.bukkit.Bukkit;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 
@@ -20,5 +21,8 @@ public class ZoneCompleteEvent extends Event {
         return HANDLERS;
     }
 
+    public void endZone(){
+        finishedZone.cancel();
+    }
 
 }
