@@ -32,8 +32,8 @@ public class Zone extends BukkitRunnable{
 
 
         if(this.charge >= 300){
-            Bukkit.getPluginManager().callEvent(new ZoneCompleteEvent(this));
             Bukkit.broadcastMessage("zone finished");
+            Bukkit.getPluginManager().callEvent(new ZoneCompleteEvent(this));
         }
 
 
@@ -61,9 +61,6 @@ public class Zone extends BukkitRunnable{
     }
 
     public void increaseCharge(int amount){
-        if(charge + amount >100){
-            return;
-        }
         charge += amount;
     }
 

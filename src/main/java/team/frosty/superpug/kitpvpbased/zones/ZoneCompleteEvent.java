@@ -10,6 +10,7 @@ public class ZoneCompleteEvent extends Event {
 
     public ZoneCompleteEvent(Zone zone){
         this.finishedZone = zone;
+        zone.cancel();
     }
 
     public static HandlerList getHandlerList() {
