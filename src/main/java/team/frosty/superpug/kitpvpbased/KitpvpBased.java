@@ -2,6 +2,7 @@ package team.frosty.superpug.kitpvpbased;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.plugin.java.JavaPlugin;
 import team.frosty.superpug.kitpvpbased.archetypes.Archetypes;
 import team.frosty.superpug.kitpvpbased.archetypes.CheckSpawn;
@@ -23,6 +24,7 @@ public final class KitpvpBased extends JavaPlugin {
         getConfig().addDefault("arena.z1", 200);
         getConfig().addDefault("arena.x2", 400);
         getConfig().addDefault("arena.z2", 400);
+
         getConfig().addDefault("arena.ceiling", 139);
         getConfig().addDefault("arena.floor", 60);
         getConfig().options().copyDefaults(true);
