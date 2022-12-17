@@ -4,7 +4,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
-import team.frosty.superpug.kitpvpbased.KitpvpBased;
 
 public class ZoneUtils {
     // Rand range generator
@@ -17,6 +16,7 @@ public class ZoneUtils {
         World w = location.getWorld();
         int y = location.getBlockY();
         while (location.getBlock().getType() != Material.AIR) {
+            Bukkit.broadcastMessage(""+y);
             location.setY(location.getBlockY() + 1);
             y = location.getBlockY();
         }
