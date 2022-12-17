@@ -51,7 +51,7 @@ public class CheckSpawn extends BukkitRunnable {
             weaponsmithItemMeta.getPersistentDataContainer().set(menuItem, PersistentDataType.INTEGER, 1);
             weaponsmithItemMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
             weaponsmithItemMeta.setDisplayName(ChatColor.RESET + "" + ChatColor.BLUE + "" + ChatColor.BOLD + "WEAPONSMITH");
-            
+
             PersistentDataContainer data = p.getPersistentDataContainer();
 
             int selected = getArchetype(p);
@@ -82,7 +82,7 @@ public class CheckSpawn extends BukkitRunnable {
                 data.set(inSpawn, PersistentDataType.INTEGER, 0);
             }
 
-            if (p.getLocation().getY() == ceilingHeight) {
+            if (p.getLocation().getY() == ceilingHeight - 1) {
                 p.getInventory().clear();
                 data.set(kitLevel, PersistentDataType.INTEGER, 1);
             }
