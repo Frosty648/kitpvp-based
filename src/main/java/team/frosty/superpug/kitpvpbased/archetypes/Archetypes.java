@@ -34,8 +34,6 @@ public class Archetypes implements Listener {
         if (e.getAction() != Action.RIGHT_CLICK_BLOCK && e.getAction() != Action.RIGHT_CLICK_AIR)
             return;
 
-        e.getPlayer().playNote(e.getPlayer().getLocation(), Instrument.BELL, Note.natural(1, Note.Tone.C));
-
         ItemStack item = e.getItem();
         ItemMeta im = item.getItemMeta();
         PersistentDataContainer data = im.getPersistentDataContainer();
@@ -51,18 +49,21 @@ public class Archetypes implements Listener {
 
         if (data.has(armorer, PersistentDataType.INTEGER)) {
             e.setCancelled(true);
+            e.getPlayer().playNote(e.getPlayer().getLocation(), Instrument.BELL, Note.natural(1, Note.Tone.C));
             e.getPlayer().sendMessage(ChatColor.YELLOW + "[" + ChatColor.GREEN + "ARCHETYPES" + ChatColor.YELLOW + "] " + ChatColor.GREEN + "You have selected the Armorer Class!");
             e.getPlayer().getPersistentDataContainer().set(playerArmorer, PersistentDataType.INTEGER, 1);
             e.getPlayer().getPersistentDataContainer().remove(playerTrickster);
             e.getPlayer().getPersistentDataContainer().remove(playerWeaponsmith);
         } else if (data.has(trickster, PersistentDataType.INTEGER)) {
             e.setCancelled(true);
+            e.getPlayer().playNote(e.getPlayer().getLocation(), Instrument.BELL, Note.natural(1, Note.Tone.C));
             e.getPlayer().sendMessage(ChatColor.YELLOW + "[" + ChatColor.GREEN + "ARCHETYPES" + ChatColor.YELLOW + "] " + ChatColor.GREEN + "You have selected the Trickster Class!");
             e.getPlayer().getPersistentDataContainer().set(playerTrickster, PersistentDataType.INTEGER, 1);
             e.getPlayer().getPersistentDataContainer().remove(playerArmorer);
             e.getPlayer().getPersistentDataContainer().remove(playerWeaponsmith);
         } else if (data.has(weaponsmith, PersistentDataType.INTEGER)) {
             e.setCancelled(true);
+            e.getPlayer().playNote(e.getPlayer().getLocation(), Instrument.BELL, Note.natural(1, Note.Tone.C));
             e.getPlayer().sendMessage(ChatColor.YELLOW + "[" + ChatColor.GREEN + "ARCHETYPES" + ChatColor.YELLOW + "] " + ChatColor.GREEN + "You have selected the Weaponsmith Class!");
             e.getPlayer().getPersistentDataContainer().set(playerWeaponsmith, PersistentDataType.INTEGER, 1);
             e.getPlayer().getPersistentDataContainer().remove(playerTrickster);
