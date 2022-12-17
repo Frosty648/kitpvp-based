@@ -20,7 +20,7 @@ public class ZoneUtils {
             location.setY(location.getBlockY() + 1);
             y = location.getBlockY();
         }
-        return y;
+        return y+1;
     }
 
     public static Location genRandomCircleLoc(int minX, int maxX, int minZ, int maxZ, int minY) {
