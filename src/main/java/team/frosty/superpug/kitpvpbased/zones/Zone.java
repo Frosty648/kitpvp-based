@@ -17,30 +17,21 @@ public class Zone extends BukkitRunnable{
     private ArrayList<Double> Distances;
     private int size;
     private int charge;
-    private int chargeRate = 1;
 
-    public Zone(Location l,int s){
+    public Zone(Location l,int size){
         this.zoneLocation = l;
-        this.size = s;
-        this.runTaskTimer(KitpvpBased.getInstance(), 0,5);
-    }
-
-    public Zone(Location l, Integer chargeRate){
-        this.zoneLocation = l;
-        this.chargeRate = chargeRate;
-        this.runTaskTimer(KitpvpBased.getInstance(), 0,5);
+        this.size = size;
+        this.runTaskTimer(KitpvpBased.getInstance(), 0,1);
     }
 
     @Override
     public void run(){
         drawZone();
 
+        increaseCharge(playersInZone());
 
-        if(shouldCharge()){
-            increaseCharge(20);
-        }
 
-        if(this.charge >= 100){
+        if(this.charge >= 300){
             Bukkit.getPluginManager().callEvent(new ZoneCompleteEvent(this));
             Bukkit.broadcastMessage("zone finished");
         }
@@ -59,13 +50,14 @@ public class Zone extends BukkitRunnable{
         }
     }
 
-    public boolean shouldCharge(){
+    public int playersInZone(){
+        int inZone = 0;
         for (Player p : Bukkit.getOnlinePlayers()){
             if(p.getLocation().distanceSquared(zoneLocation) < 7){
-                return true;
+                inZone += 1;
             }
         }
-        return false;
+        return inZone;
     }
 
     public void increaseCharge(int amount){
