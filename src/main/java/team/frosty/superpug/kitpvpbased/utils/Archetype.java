@@ -7,7 +7,7 @@ public abstract class Archetype {
     protected int level;
     protected Player plr;
 
-    abstract public void applyLevel();
+    abstract protected void applyLevel();
 
     abstract protected void level2();
     abstract protected void level3();
