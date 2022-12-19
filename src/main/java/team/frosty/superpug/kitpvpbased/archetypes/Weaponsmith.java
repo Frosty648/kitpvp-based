@@ -5,6 +5,6 @@ import team.frosty.superpug.kitpvpbased.utils.Archetype;
 
 public class Weaponsmith extends Archetype {
     public Weaponsmith(Player plr) {
-        this.plr
+        this.plr = plr;
     }
 }

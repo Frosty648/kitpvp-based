@@ -4,8 +4,8 @@ import org.bukkit.entity.Player;
 
 public abstract class Archetype {
 
-    private int level;
-    private Player plr;
+    protected int level;
+    protected Player plr;
 
     abstract public void applyLevel();
 
