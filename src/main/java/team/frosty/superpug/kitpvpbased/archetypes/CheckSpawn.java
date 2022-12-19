@@ -82,7 +82,7 @@ public class CheckSpawn extends BukkitRunnable {
                 data.set(inSpawn, PersistentDataType.INTEGER, 0);
             }
 
-            if (p.getLocation().getY() == ceilingHeight - 1) {
+            if (p.getLocation().getY() <= ceilingHeight && p.getLocation().getY() >= ceilingHeight - 1.5) {
                 p.getInventory().clear();
                 data.set(kitLevel, PersistentDataType.INTEGER, 1);
             }

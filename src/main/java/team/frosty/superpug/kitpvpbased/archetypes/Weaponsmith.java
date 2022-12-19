@@ -33,15 +33,20 @@ public class Weaponsmith extends Archetype {
             case 8 -> level8();
             case 9 -> levelUber();
         }
-        this.plr.sendMessage(ChatColor.YELLOW + "[WEAPONSMITH LEVEL " + this.level + "] " + ChatColor.GREEN + levelMessages[this.level]);
+        this.plr.sendMessage(ChatColor.YELLOW + "[WEAPONSMITH LEVEL " + this.getLevel() + "] " + ChatColor.GREEN + levelMessages[this.getLevel()]);
         this.plr.playNote(this.plr.getLocation(), Instrument.BELL, Note.natural(1, Note.Tone.C));
+    }
+
+    @Override
+    protected void level1() {
+        
     }
 
     @Override
     protected void level2() {
         PlayerInventory newInv = this.plr.getInventory();
         newInv.clear();
-        newInv.addItem()
+//        newInv.addItem()
     }
 
     @Override
