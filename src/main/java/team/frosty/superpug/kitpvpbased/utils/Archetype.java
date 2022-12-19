@@ -2,7 +2,7 @@ package team.frosty.superpug.kitpvpbased.utils;
 
 import org.bukkit.entity.Player;
 
-abstract class Archetype {
+public abstract class Archetype {
 
     private int level;
     private Player plr;
