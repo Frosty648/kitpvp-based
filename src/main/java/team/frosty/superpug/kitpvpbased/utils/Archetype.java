@@ -9,14 +9,14 @@ public abstract class Archetype {
 
     abstract public void applyLevel();
 
-    abstract void level2();
-    abstract void level3();
-    abstract void level4();
-    abstract void level5();
-    abstract void level6();
-    abstract void level7();
-    abstract void level8();
-    abstract void levelUber();
+    abstract protected void level2();
+    abstract protected void level3();
+    abstract protected void level4();
+    abstract protected void level5();
+    abstract protected void level6();
+    abstract protected void level7();
+    abstract protected void level8();
+    abstract protected void levelUber();
 
 
     public int getLevel() {

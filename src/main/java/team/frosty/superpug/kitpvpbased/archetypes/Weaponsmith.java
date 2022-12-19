@@ -6,5 +6,11 @@ import team.frosty.superpug.kitpvpbased.utils.Archetype;
 public class Weaponsmith extends Archetype {
     public Weaponsmith(Player plr) {
         this.plr = plr;
+        this.level = 1;
     }
+
+    public void applyLevel() {
+
+    }
+
 }
