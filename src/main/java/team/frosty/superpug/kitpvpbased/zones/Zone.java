@@ -34,7 +34,7 @@ public class Zone extends BukkitRunnable{
 
         if(this.charge >= 300){
             Bukkit.broadcastMessage("zone finished");
-            Bukkit.getPluginManager().callEvent(new ZoneCompleteEvent(this));
+            Bukkit.getPluginManager().callEvent(new ZoneCompleteEvent(this, getClosestPlayer()));
         }
 
 

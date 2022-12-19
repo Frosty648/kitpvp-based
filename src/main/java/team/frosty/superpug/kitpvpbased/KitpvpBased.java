@@ -2,9 +2,8 @@ package team.frosty.superpug.kitpvpbased;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
-import org.bukkit.Material;
 import org.bukkit.plugin.java.JavaPlugin;
-import team.frosty.superpug.kitpvpbased.archetypes.Archetypes;
+import team.frosty.superpug.kitpvpbased.archetypes.ArchetypeSelection;
 import team.frosty.superpug.kitpvpbased.archetypes.CheckSpawn;
 import team.frosty.superpug.kitpvpbased.commands.DebugAddPD;
 import team.frosty.superpug.kitpvpbased.commands.DebugGetPlayerPD;
@@ -33,7 +32,7 @@ public final class KitpvpBased extends JavaPlugin {
         // Registering event modules
         getServer().getPluginManager().registerEvents(new Chat(), this);
         getServer().getPluginManager().registerEvents(new TeleBow(), this);
-        getServer().getPluginManager().registerEvents(new Archetypes(), this);
+        getServer().getPluginManager().registerEvents(new ArchetypeSelection(), this);
 
         // Creating original zones
         int x1 = getConfig().getInt("arena.x1");

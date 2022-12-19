@@ -14,7 +14,7 @@ import org.bukkit.persistence.PersistentDataType;
 import team.frosty.superpug.kitpvpbased.KitpvpBased;
 
 
-public class Archetypes implements Listener {
+public class ArchetypeSelection implements Listener {
 
     @EventHandler
     public void onDropItem(PlayerDropItemEvent e) {
